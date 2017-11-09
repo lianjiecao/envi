@@ -48,7 +48,7 @@ lo        Link encap:Local Loopback
 
 It is difficult to pinpoint the exact problems. Based on the [**Linux networking stack**](https://blog.packagecloud.io/eng/2017/02/06/monitoring-tuning-linux-networking-stack-sending-data/) and [**more details on the transmission path**](https://www.coverfire.com/articles/queueing-in-the-linux-network-stack/), everything other than the driver queue looks alright.
 
-<img src="https://www.coverfire.com/wp-content/uploads/2012/11/figure_4_v2.png" width="480">
+<img src="https://raw.githubusercontent.com/lianjiecao/envi/master/misc/pkt_out_pipe.png" width="480">
 
 1. ``atop`` shows ``upper`` has equal number of RX and TX which mean it networking stack can receive and send packets correctly.
 2. ``qdisc`` queue shows 1000 packets are backlogged, which means NIC driver is not getting packets from ``qdisc`` queue.
@@ -67,7 +67,7 @@ It is difficult to pinpoint the exact problems. Based on the [**Linux networking
 
 It is very likely a problem of ``virtio`` driver. However, ``virtio`` is [**different from regular NIC drivers**](https://www.ibm.com/developerworks/library/l-virtio/index.html) (e.g., e1000, igb) as a paravirtualization solution. Therefore it is hard to say if it is a problem of the host or guest.
 
-<img src="https://www.ibm.com/developerworks/library/l-virtio/figure1.gif">
+<img src="https://raw.githubusercontent.com/lianjiecao/envi/master/misc/virtio.gif">
 
 ## How to solve?
 
