@@ -1,5 +1,5 @@
 ## No online scaling, no online training
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -55,13 +55,13 @@ Accuracy    : 0.483180428135
 real    1m8.861s
 user    1m8.611s
 sys     0m0.237s
-
+```
 
 
 
 
 ## Online scaling (One scaler), no online training
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -117,12 +117,12 @@ Accuracy    : 0.798165137615
 real    1m29.048s
 user    1m28.818s
 sys     0m0.209s
-
+```
 
 
 
 ## Online scaling (auto), no online training
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -178,12 +178,12 @@ Accuracy    : 0.547400611621
 real    1m32.960s
 user    1m32.729s
 sys     0m0.212s
-
+```
 
 
 
 ## Online scaling (one scaler), online training (per sample)
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7 2> scalers_one_http_online_train.txt
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -239,12 +239,12 @@ Accuracy    : 0.969418960245
 real    2m41.971s
 user    2m41.754s
 sys     0m0.193s
-
+```
 
 
 
 ## Online scaling (auto), online training (per sample)
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7 2> scalers_auto_http_online_train.txt
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -300,14 +300,14 @@ Accuracy    : 0.951070336391
 real    2m49.075s
 user    2m48.778s
 sys     0m0.265s
-
+```
 
 
 
 
 
 ## Online scaling (one scaler), online training (window)
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7 2> scalers_one_http_online_train_win.txt
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -363,12 +363,12 @@ Accuracy    : 0.593272171254
 real    1m5.614s
 user    1m5.364s
 sys     0m0.236s
-
+```
 
 
 
 ## Online scaling (auto), online training (window)
-
+```bash
 ubuntu@exp-ctl:~/envi$ time ./vital_sim.py --train-files ../nfv-vital/suricata-homo-HTTP-10-KB-17_10_15-19_05_48_300pts/ids-1-HTTP-10KB-app-metric.log --test-files ../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log,../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log --models NN-all-na-std-suricata-http-10-KB --thd 0.7 2> scalers_auto_http_online_train_win.txt
 Testing list: ['../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-30KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-50KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-70KB-app-metric.log', '../nfv-vital/suricata-homo-HTTP-30-50-70-90-KB-17_10_16-19_27_51_300pts@caps/ids-1-HTTP-90KB-app-metric.log']
 Retraining ML models
@@ -424,4 +424,4 @@ Accuracy    : 0.82874617737
 real    1m9.840s
 user    1m9.633s
 sys     0m0.189s
-
+```
