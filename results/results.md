@@ -1,5 +1,9 @@
 # Online Learning Results
 
+Complete flow chart of both online and offline stage for scaling decision engine.
+
+<img src="https://raw.githubusercontent.com/lianjiecao/envi/master/results/complete_flow_chart.png" width="800">
+
 ## Online Options:
 
 ### scaler
