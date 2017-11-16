@@ -25,7 +25,7 @@ Note that window-based training detects false negtive by matching input and outp
 For this testing set:
 1. Training classifier online is more important than updating scalers online.
 2. **Window-based** learning performs worse than **regular** learning. First, window-based learning performs less number of retrainings (only at false negtive). Second, window-based training is not based on "ground truth" targets as regular learning does.
-3. **multi** scaler works slightly worse than **one** scaler. This is not exactly we expect. I am digging into it to figure out why. Possibly this is because the values of different distributions of the same feature overlap, which makes it very hard to create accurate scalers to separate them. For instance, [**this**](https://raw.githubusercontent.com/lianjiecao/envi/master/results/scalers_auto_http_no_online_train.md) shows scalers for _vnf.app_layer.flow.http_ does not increase linearly as more testing sets are added. When the first testing set is added, it does create a new scaler and keeps updating the new scaler. However, when more testing sets are added, no new scalers are created. It simply keeps updating the second scaler. Also, some features has unexpected large number of scalers.
+3. **multi** scaler works slightly worse than **one** scaler. This is not exactly we expect. I am digging into it to figure out why. Possibly this is because the values of different distributions of the same feature overlap, which makes it very hard to create accurate scalers to separate them. For instance, [**this**](https://github.com/lianjiecao/envi/blob/master/results/scaler_multi-clf_regular-http.md) shows scalers for _vnf.app_layer.flow.http_ does not increase linearly as more testing sets are added. When the first testing set is added, it does create a new scaler and keeps updating the new scaler. However, when more testing sets are added, no new scalers are created. It simply keeps updating the second scaler. Also, some features has unexpected large number of scalers.
 
 **Examples of scalers not growing as expected**
 ```bash
@@ -67,7 +67,7 @@ For this testing set:
   41 samples, mean -339962.6841, var 1966429555.8777
 ```
 
-[**Raw results**](https://raw.githubusercontent.com/lianjiecao/envi/master/results/raw.md) with more details.
+[**Raw results**](https://github.com/lianjiecao/envi/blob/master/results/raw.md) with more details.
 
 <table>
   <tr>
