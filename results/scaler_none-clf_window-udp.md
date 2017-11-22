@@ -2,10 +2,10 @@
 ```bash
 +++++ infras.cpu +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.cpu_0 +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.eth0_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -20,16 +20,16 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.eth1_rcv_byte +++++
 1 scalers:
-  280 samples, mean 8258627.5196, var 7803606283616.1816
+  280 samples, mean 8244966.8107, var 7862877964068.5957
 +++++ infras.eth1_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6000, var 23756572.3971
+  280 samples, mean 13358.2232, var 23742148.5314
 +++++ infras.eth1_snd_byte +++++
 1 scalers:
-  280 samples, mean 8063016.3589, var 5205567732872.9199
+  280 samples, mean 8035621.9571, var 5105869121064.4141
 +++++ infras.eth1_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0000, var 21055411.7500
+  280 samples, mean 16023.4893, var 20638603.8838
 +++++ infras.eth2_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -44,7 +44,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.freeMem +++++
 1 scalers:
-  280 samples, mean 1009.0804, var 14084.3141
+  280 samples, mean 1008.2964, var 14426.9175
 +++++ infras.lo_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -59,19 +59,19 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.suricata_proc +++++
 1 scalers:
-  280 samples, mean 35.3420, var 91.8556
+  280 samples, mean 35.2455, var 91.0158
 +++++ infras.upper_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6268, var 23756587.0366
+  280 samples, mean 13358.2714, var 23742516.8513
 +++++ infras.upper_snd_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0357, var 21055718.4344
+  280 samples, mean 16023.5554, var 20639290.5157
 +++++ vnf.app_layer.flow.dcerpc_tcp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -95,7 +95,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.flow.http +++++
 1 scalers:
-  280 samples, mean 642.2184, var 30296.1485
+  280 samples, mean 639.2203, var 29505.6205
 +++++ vnf.app_layer.flow.imap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -122,7 +122,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.tx.http +++++
 1 scalers:
-  280 samples, mean 642.3582, var 30750.6078
+  280 samples, mean 639.5348, var 30011.9139
 +++++ vnf.app_layer.tx.smtp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -134,7 +134,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.bytes +++++
 1 scalers:
-  280 samples, mean 7863252.5337, var 4560019522076.5176
+  280 samples, mean 7826792.1232, var 4445337412205.1943
 +++++ vnf.decoder.dce.pkt_too_small +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -161,7 +161,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.ipv4 +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ipv4_in_ipv6 +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -188,7 +188,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.pkts +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ppp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -206,7 +206,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.tcp +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.teredo +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -263,40 +263,40 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow.memuse +++++
 1 scalers:
-  280 samples, mean -1413.9429, var 4230456069.8253
+  280 samples, mean -881.0000, var 4167522391.0000
 +++++ vnf.flow.spare +++++
 1 scalers:
-  280 samples, mean 0.1510, var 3.5637
+  280 samples, mean 0.1478, var 3.5681
 +++++ vnf.flow.tcp_reuse +++++
 1 scalers:
-  280 samples, mean 497.4102, var 27944.9966
+  280 samples, mean 494.3072, var 27963.0400
 +++++ vnf.flow_mgr.bypassed_pruned +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.closed_pruned +++++
 1 scalers:
-  280 samples, mean 642.1860, var 26148.3703
+  280 samples, mean 637.9429, var 25988.4495
 +++++ vnf.flow_mgr.est_pruned +++++
 1 scalers:
-  280 samples, mean 0.2202, var 0.2324
+  280 samples, mean 0.2440, var 0.2630
 +++++ vnf.flow_mgr.flows_checked +++++
 1 scalers:
-  280 samples, mean -2.7354, var 5043.5948
+  280 samples, mean -2.6890, var 4724.4520
 +++++ vnf.flow_mgr.flows_notimeout +++++
 1 scalers:
-  280 samples, mean -1.9744, var 4723.0966
+  280 samples, mean -2.2242, var 4401.2741
 +++++ vnf.flow_mgr.flows_removed +++++
 1 scalers:
-  280 samples, mean -0.1116, var 2.5541
+  280 samples, mean -0.1426, var 2.3380
 +++++ vnf.flow_mgr.flows_timeout +++++
 1 scalers:
-  280 samples, mean -0.1495, var 5.1056
+  280 samples, mean -0.0827, var 5.0562
 +++++ vnf.flow_mgr.flows_timeout_inuse +++++
 1 scalers:
-  280 samples, mean 0.0345, var 2.0626
+  280 samples, mean 0.1123, var 2.1905
 +++++ vnf.flow_mgr.new_pruned +++++
 1 scalers:
-  280 samples, mean 0.7915, var 1.3945
+  280 samples, mean 0.7779, var 1.3629
 +++++ vnf.flow_mgr.rows_busy +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -305,25 +305,25 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.rows_empty +++++
 1 scalers:
-  280 samples, mean 0.1049, var 0.5240
+  280 samples, mean 0.0983, var 0.5394
 +++++ vnf.flow_mgr.rows_maxlen +++++
 1 scalers:
-  280 samples, mean -0.0114, var 0.0079
+  280 samples, mean -0.0103, var 0.0080
 +++++ vnf.flow_mgr.rows_skipped +++++
 1 scalers:
-  280 samples, mean -0.3089, var 73.7481
+  280 samples, mean -0.5458, var 74.7784
 +++++ vnf.http.memcap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.http.memuse +++++
 1 scalers:
-  280 samples, mean -11631.8525, var 3438837489.3126
+  280 samples, mean -9734.4560, var 3619080522.9351
 +++++ vnf.ips.accepted +++++
 1 scalers:
-  280 samples, mean 18680.4709, var 23988862.6214
+  280 samples, mean 18576.3556, var 23277241.9688
 +++++ vnf.ips.blocked +++++
 1 scalers:
-  280 samples, mean 12.0939, var 218.9665
+  280 samples, mean 12.2284, var 221.1630
 +++++ vnf.ips.rejected +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -332,34 +332,34 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.invalid_checksum +++++
 1 scalers:
-  280 samples, mean 0.0002, var 0.0000
+  280 samples, mean 0.0006, var 0.0001
 +++++ vnf.tcp.memuse +++++
 1 scalers:
-  280 samples, mean -1272.5365, var 2011316811.7984
+  280 samples, mean -943.3397, var 1980871921.2089
 +++++ vnf.tcp.no_flow +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.pseudo +++++
 1 scalers:
-  280 samples, mean 637.8873, var 28433.5851
+  280 samples, mean 634.4967, var 27536.2453
 +++++ vnf.tcp.pseudo_failed +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.reassembly_gap +++++
 1 scalers:
-  280 samples, mean 0.0190, var 0.0023
+  280 samples, mean 0.0222, var 0.0029
 +++++ vnf.tcp.reassembly_memuse +++++
 1 scalers:
-  280 samples, mean -7259.3258, var 371059369721.6683
+  280 samples, mean -6226.3409, var 363368171085.5624
 +++++ vnf.tcp.rst +++++
 1 scalers:
-  280 samples, mean 57.1643, var 5683.9880
+  280 samples, mean 58.0066, var 5977.2766
 +++++ vnf.tcp.segment_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.sessions +++++
 1 scalers:
-  280 samples, mean 642.9349, var 31510.4867
+  280 samples, mean 640.4063, var 30896.8762
 +++++ vnf.tcp.ssn_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -368,10 +368,10 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.syn +++++
 1 scalers:
-  280 samples, mean 657.0341, var 34961.6863
+  280 samples, mean 654.2206, var 34371.4831
 +++++ vnf.tcp.synack +++++
 1 scalers:
-  280 samples, mean 645.7598, var 31592.7057
+  280 samples, mean 643.0893, var 30904.1527
 +++++ vnf.time_stamp_sec +++++
 1 scalers:
   280 samples, mean 1.0000, var 0.0000
@@ -386,10 +386,10 @@
 ```bash
 +++++ infras.cpu +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.cpu_0 +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.eth0_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -404,16 +404,16 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.eth1_rcv_byte +++++
 1 scalers:
-  280 samples, mean 8258627.5196, var 7803606283616.1816
+  280 samples, mean 8244966.8107, var 7862877964068.5957
 +++++ infras.eth1_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6000, var 23756572.3971
+  280 samples, mean 13358.2232, var 23742148.5314
 +++++ infras.eth1_snd_byte +++++
 1 scalers:
-  280 samples, mean 8063016.3589, var 5205567732872.9199
+  280 samples, mean 8035621.9571, var 5105869121064.4141
 +++++ infras.eth1_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0000, var 21055411.7500
+  280 samples, mean 16023.4893, var 20638603.8838
 +++++ infras.eth2_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -428,7 +428,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.freeMem +++++
 1 scalers:
-  280 samples, mean 1009.0804, var 14084.3141
+  280 samples, mean 1008.2964, var 14426.9175
 +++++ infras.lo_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -443,19 +443,19 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.suricata_proc +++++
 1 scalers:
-  280 samples, mean 35.3420, var 91.8556
+  280 samples, mean 35.2455, var 91.0158
 +++++ infras.upper_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6268, var 23756587.0366
+  280 samples, mean 13358.2714, var 23742516.8513
 +++++ infras.upper_snd_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0357, var 21055718.4344
+  280 samples, mean 16023.5554, var 20639290.5157
 +++++ vnf.app_layer.flow.dcerpc_tcp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -479,7 +479,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.flow.http +++++
 1 scalers:
-  280 samples, mean 642.2184, var 30296.1485
+  280 samples, mean 639.2203, var 29505.6205
 +++++ vnf.app_layer.flow.imap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -506,7 +506,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.tx.http +++++
 1 scalers:
-  280 samples, mean 642.3582, var 30750.6078
+  280 samples, mean 639.5348, var 30011.9139
 +++++ vnf.app_layer.tx.smtp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -518,7 +518,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.bytes +++++
 1 scalers:
-  280 samples, mean 7863252.5337, var 4560019522076.5176
+  280 samples, mean 7826792.1232, var 4445337412205.1943
 +++++ vnf.decoder.dce.pkt_too_small +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -545,7 +545,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.ipv4 +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ipv4_in_ipv6 +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -572,7 +572,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.pkts +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ppp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -590,7 +590,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.tcp +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.teredo +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -647,40 +647,40 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow.memuse +++++
 1 scalers:
-  280 samples, mean -1413.9429, var 4230456069.8253
+  280 samples, mean -881.0000, var 4167522391.0000
 +++++ vnf.flow.spare +++++
 1 scalers:
-  280 samples, mean 0.1510, var 3.5637
+  280 samples, mean 0.1478, var 3.5681
 +++++ vnf.flow.tcp_reuse +++++
 1 scalers:
-  280 samples, mean 497.4102, var 27944.9966
+  280 samples, mean 494.3072, var 27963.0400
 +++++ vnf.flow_mgr.bypassed_pruned +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.closed_pruned +++++
 1 scalers:
-  280 samples, mean 642.1860, var 26148.3703
+  280 samples, mean 637.9429, var 25988.4495
 +++++ vnf.flow_mgr.est_pruned +++++
 1 scalers:
-  280 samples, mean 0.2202, var 0.2324
+  280 samples, mean 0.2440, var 0.2630
 +++++ vnf.flow_mgr.flows_checked +++++
 1 scalers:
-  280 samples, mean -2.7354, var 5043.5948
+  280 samples, mean -2.6890, var 4724.4520
 +++++ vnf.flow_mgr.flows_notimeout +++++
 1 scalers:
-  280 samples, mean -1.9744, var 4723.0966
+  280 samples, mean -2.2242, var 4401.2741
 +++++ vnf.flow_mgr.flows_removed +++++
 1 scalers:
-  280 samples, mean -0.1116, var 2.5541
+  280 samples, mean -0.1426, var 2.3380
 +++++ vnf.flow_mgr.flows_timeout +++++
 1 scalers:
-  280 samples, mean -0.1495, var 5.1056
+  280 samples, mean -0.0827, var 5.0562
 +++++ vnf.flow_mgr.flows_timeout_inuse +++++
 1 scalers:
-  280 samples, mean 0.0345, var 2.0626
+  280 samples, mean 0.1123, var 2.1905
 +++++ vnf.flow_mgr.new_pruned +++++
 1 scalers:
-  280 samples, mean 0.7915, var 1.3945
+  280 samples, mean 0.7779, var 1.3629
 +++++ vnf.flow_mgr.rows_busy +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -689,25 +689,25 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.rows_empty +++++
 1 scalers:
-  280 samples, mean 0.1049, var 0.5240
+  280 samples, mean 0.0983, var 0.5394
 +++++ vnf.flow_mgr.rows_maxlen +++++
 1 scalers:
-  280 samples, mean -0.0114, var 0.0079
+  280 samples, mean -0.0103, var 0.0080
 +++++ vnf.flow_mgr.rows_skipped +++++
 1 scalers:
-  280 samples, mean -0.3089, var 73.7481
+  280 samples, mean -0.5458, var 74.7784
 +++++ vnf.http.memcap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.http.memuse +++++
 1 scalers:
-  280 samples, mean -11631.8525, var 3438837489.3126
+  280 samples, mean -9734.4560, var 3619080522.9351
 +++++ vnf.ips.accepted +++++
 1 scalers:
-  280 samples, mean 18680.4709, var 23988862.6214
+  280 samples, mean 18576.3556, var 23277241.9688
 +++++ vnf.ips.blocked +++++
 1 scalers:
-  280 samples, mean 12.0939, var 218.9665
+  280 samples, mean 12.2284, var 221.1630
 +++++ vnf.ips.rejected +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -716,34 +716,34 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.invalid_checksum +++++
 1 scalers:
-  280 samples, mean 0.0002, var 0.0000
+  280 samples, mean 0.0006, var 0.0001
 +++++ vnf.tcp.memuse +++++
 1 scalers:
-  280 samples, mean -1272.5365, var 2011316811.7984
+  280 samples, mean -943.3397, var 1980871921.2089
 +++++ vnf.tcp.no_flow +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.pseudo +++++
 1 scalers:
-  280 samples, mean 637.8873, var 28433.5851
+  280 samples, mean 634.4967, var 27536.2453
 +++++ vnf.tcp.pseudo_failed +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.reassembly_gap +++++
 1 scalers:
-  280 samples, mean 0.0190, var 0.0023
+  280 samples, mean 0.0222, var 0.0029
 +++++ vnf.tcp.reassembly_memuse +++++
 1 scalers:
-  280 samples, mean -7259.3258, var 371059369721.6683
+  280 samples, mean -6226.3409, var 363368171085.5624
 +++++ vnf.tcp.rst +++++
 1 scalers:
-  280 samples, mean 57.1643, var 5683.9880
+  280 samples, mean 58.0066, var 5977.2766
 +++++ vnf.tcp.segment_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.sessions +++++
 1 scalers:
-  280 samples, mean 642.9349, var 31510.4867
+  280 samples, mean 640.4063, var 30896.8762
 +++++ vnf.tcp.ssn_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -752,10 +752,10 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.syn +++++
 1 scalers:
-  280 samples, mean 657.0341, var 34961.6863
+  280 samples, mean 654.2206, var 34371.4831
 +++++ vnf.tcp.synack +++++
 1 scalers:
-  280 samples, mean 645.7598, var 31592.7057
+  280 samples, mean 643.0893, var 30904.1527
 +++++ vnf.time_stamp_sec +++++
 1 scalers:
   280 samples, mean 1.0000, var 0.0000
@@ -770,10 +770,10 @@
 ```bash
 +++++ infras.cpu +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.cpu_0 +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.eth0_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -788,16 +788,16 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.eth1_rcv_byte +++++
 1 scalers:
-  280 samples, mean 8258627.5196, var 7803606283616.1816
+  280 samples, mean 8244966.8107, var 7862877964068.5957
 +++++ infras.eth1_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6000, var 23756572.3971
+  280 samples, mean 13358.2232, var 23742148.5314
 +++++ infras.eth1_snd_byte +++++
 1 scalers:
-  280 samples, mean 8063016.3589, var 5205567732872.9199
+  280 samples, mean 8035621.9571, var 5105869121064.4141
 +++++ infras.eth1_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0000, var 21055411.7500
+  280 samples, mean 16023.4893, var 20638603.8838
 +++++ infras.eth2_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -812,7 +812,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.freeMem +++++
 1 scalers:
-  280 samples, mean 1009.0804, var 14084.3141
+  280 samples, mean 1008.2964, var 14426.9175
 +++++ infras.lo_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -827,19 +827,19 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.suricata_proc +++++
 1 scalers:
-  280 samples, mean 35.3420, var 91.8556
+  280 samples, mean 35.2455, var 91.0158
 +++++ infras.upper_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6268, var 23756587.0366
+  280 samples, mean 13358.2714, var 23742516.8513
 +++++ infras.upper_snd_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0357, var 21055718.4344
+  280 samples, mean 16023.5554, var 20639290.5157
 +++++ vnf.app_layer.flow.dcerpc_tcp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -863,7 +863,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.flow.http +++++
 1 scalers:
-  280 samples, mean 642.2184, var 30296.1485
+  280 samples, mean 639.2203, var 29505.6205
 +++++ vnf.app_layer.flow.imap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -890,7 +890,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.tx.http +++++
 1 scalers:
-  280 samples, mean 642.3582, var 30750.6078
+  280 samples, mean 639.5348, var 30011.9139
 +++++ vnf.app_layer.tx.smtp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -902,7 +902,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.bytes +++++
 1 scalers:
-  280 samples, mean 7863252.5337, var 4560019522076.5176
+  280 samples, mean 7826792.1232, var 4445337412205.1943
 +++++ vnf.decoder.dce.pkt_too_small +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -929,7 +929,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.ipv4 +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ipv4_in_ipv6 +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -956,7 +956,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.pkts +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ppp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -974,7 +974,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.tcp +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.teredo +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1031,40 +1031,40 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow.memuse +++++
 1 scalers:
-  280 samples, mean -1413.9429, var 4230456069.8253
+  280 samples, mean -881.0000, var 4167522391.0000
 +++++ vnf.flow.spare +++++
 1 scalers:
-  280 samples, mean 0.1510, var 3.5637
+  280 samples, mean 0.1478, var 3.5681
 +++++ vnf.flow.tcp_reuse +++++
 1 scalers:
-  280 samples, mean 497.4102, var 27944.9966
+  280 samples, mean 494.3072, var 27963.0400
 +++++ vnf.flow_mgr.bypassed_pruned +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.closed_pruned +++++
 1 scalers:
-  280 samples, mean 642.1860, var 26148.3703
+  280 samples, mean 637.9429, var 25988.4495
 +++++ vnf.flow_mgr.est_pruned +++++
 1 scalers:
-  280 samples, mean 0.2202, var 0.2324
+  280 samples, mean 0.2440, var 0.2630
 +++++ vnf.flow_mgr.flows_checked +++++
 1 scalers:
-  280 samples, mean -2.7354, var 5043.5948
+  280 samples, mean -2.6890, var 4724.4520
 +++++ vnf.flow_mgr.flows_notimeout +++++
 1 scalers:
-  280 samples, mean -1.9744, var 4723.0966
+  280 samples, mean -2.2242, var 4401.2741
 +++++ vnf.flow_mgr.flows_removed +++++
 1 scalers:
-  280 samples, mean -0.1116, var 2.5541
+  280 samples, mean -0.1426, var 2.3380
 +++++ vnf.flow_mgr.flows_timeout +++++
 1 scalers:
-  280 samples, mean -0.1495, var 5.1056
+  280 samples, mean -0.0827, var 5.0562
 +++++ vnf.flow_mgr.flows_timeout_inuse +++++
 1 scalers:
-  280 samples, mean 0.0345, var 2.0626
+  280 samples, mean 0.1123, var 2.1905
 +++++ vnf.flow_mgr.new_pruned +++++
 1 scalers:
-  280 samples, mean 0.7915, var 1.3945
+  280 samples, mean 0.7779, var 1.3629
 +++++ vnf.flow_mgr.rows_busy +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1073,25 +1073,25 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.rows_empty +++++
 1 scalers:
-  280 samples, mean 0.1049, var 0.5240
+  280 samples, mean 0.0983, var 0.5394
 +++++ vnf.flow_mgr.rows_maxlen +++++
 1 scalers:
-  280 samples, mean -0.0114, var 0.0079
+  280 samples, mean -0.0103, var 0.0080
 +++++ vnf.flow_mgr.rows_skipped +++++
 1 scalers:
-  280 samples, mean -0.3089, var 73.7481
+  280 samples, mean -0.5458, var 74.7784
 +++++ vnf.http.memcap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.http.memuse +++++
 1 scalers:
-  280 samples, mean -11631.8525, var 3438837489.3126
+  280 samples, mean -9734.4560, var 3619080522.9351
 +++++ vnf.ips.accepted +++++
 1 scalers:
-  280 samples, mean 18680.4709, var 23988862.6214
+  280 samples, mean 18576.3556, var 23277241.9688
 +++++ vnf.ips.blocked +++++
 1 scalers:
-  280 samples, mean 12.0939, var 218.9665
+  280 samples, mean 12.2284, var 221.1630
 +++++ vnf.ips.rejected +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1100,34 +1100,34 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.invalid_checksum +++++
 1 scalers:
-  280 samples, mean 0.0002, var 0.0000
+  280 samples, mean 0.0006, var 0.0001
 +++++ vnf.tcp.memuse +++++
 1 scalers:
-  280 samples, mean -1272.5365, var 2011316811.7984
+  280 samples, mean -943.3397, var 1980871921.2089
 +++++ vnf.tcp.no_flow +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.pseudo +++++
 1 scalers:
-  280 samples, mean 637.8873, var 28433.5851
+  280 samples, mean 634.4967, var 27536.2453
 +++++ vnf.tcp.pseudo_failed +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.reassembly_gap +++++
 1 scalers:
-  280 samples, mean 0.0190, var 0.0023
+  280 samples, mean 0.0222, var 0.0029
 +++++ vnf.tcp.reassembly_memuse +++++
 1 scalers:
-  280 samples, mean -7259.3258, var 371059369721.6683
+  280 samples, mean -6226.3409, var 363368171085.5624
 +++++ vnf.tcp.rst +++++
 1 scalers:
-  280 samples, mean 57.1643, var 5683.9880
+  280 samples, mean 58.0066, var 5977.2766
 +++++ vnf.tcp.segment_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.sessions +++++
 1 scalers:
-  280 samples, mean 642.9349, var 31510.4867
+  280 samples, mean 640.4063, var 30896.8762
 +++++ vnf.tcp.ssn_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1136,10 +1136,10 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.syn +++++
 1 scalers:
-  280 samples, mean 657.0341, var 34961.6863
+  280 samples, mean 654.2206, var 34371.4831
 +++++ vnf.tcp.synack +++++
 1 scalers:
-  280 samples, mean 645.7598, var 31592.7057
+  280 samples, mean 643.0893, var 30904.1527
 +++++ vnf.time_stamp_sec +++++
 1 scalers:
   280 samples, mean 1.0000, var 0.0000
@@ -1154,10 +1154,10 @@
 ```bash
 +++++ infras.cpu +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.cpu_0 +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.eth0_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1172,16 +1172,16 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.eth1_rcv_byte +++++
 1 scalers:
-  280 samples, mean 8258627.5196, var 7803606283616.1816
+  280 samples, mean 8244966.8107, var 7862877964068.5957
 +++++ infras.eth1_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6000, var 23756572.3971
+  280 samples, mean 13358.2232, var 23742148.5314
 +++++ infras.eth1_snd_byte +++++
 1 scalers:
-  280 samples, mean 8063016.3589, var 5205567732872.9199
+  280 samples, mean 8035621.9571, var 5105869121064.4141
 +++++ infras.eth1_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0000, var 21055411.7500
+  280 samples, mean 16023.4893, var 20638603.8838
 +++++ infras.eth2_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1196,7 +1196,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.freeMem +++++
 1 scalers:
-  280 samples, mean 1009.0804, var 14084.3141
+  280 samples, mean 1008.2964, var 14426.9175
 +++++ infras.lo_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1211,19 +1211,19 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.suricata_proc +++++
 1 scalers:
-  280 samples, mean 35.3420, var 91.8556
+  280 samples, mean 35.2455, var 91.0158
 +++++ infras.upper_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6268, var 23756587.0366
+  280 samples, mean 13358.2714, var 23742516.8513
 +++++ infras.upper_snd_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0357, var 21055718.4344
+  280 samples, mean 16023.5554, var 20639290.5157
 +++++ vnf.app_layer.flow.dcerpc_tcp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1247,7 +1247,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.flow.http +++++
 1 scalers:
-  280 samples, mean 642.2184, var 30296.1485
+  280 samples, mean 639.2203, var 29505.6205
 +++++ vnf.app_layer.flow.imap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1274,7 +1274,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.tx.http +++++
 1 scalers:
-  280 samples, mean 642.3582, var 30750.6078
+  280 samples, mean 639.5348, var 30011.9139
 +++++ vnf.app_layer.tx.smtp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1286,7 +1286,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.bytes +++++
 1 scalers:
-  280 samples, mean 7863252.5337, var 4560019522076.5176
+  280 samples, mean 7826792.1232, var 4445337412205.1943
 +++++ vnf.decoder.dce.pkt_too_small +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1313,7 +1313,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.ipv4 +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ipv4_in_ipv6 +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1340,7 +1340,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.pkts +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ppp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1358,7 +1358,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.tcp +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.teredo +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1415,40 +1415,40 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow.memuse +++++
 1 scalers:
-  280 samples, mean -1413.9429, var 4230456069.8253
+  280 samples, mean -881.0000, var 4167522391.0000
 +++++ vnf.flow.spare +++++
 1 scalers:
-  280 samples, mean 0.1510, var 3.5637
+  280 samples, mean 0.1478, var 3.5681
 +++++ vnf.flow.tcp_reuse +++++
 1 scalers:
-  280 samples, mean 497.4102, var 27944.9966
+  280 samples, mean 494.3072, var 27963.0400
 +++++ vnf.flow_mgr.bypassed_pruned +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.closed_pruned +++++
 1 scalers:
-  280 samples, mean 642.1860, var 26148.3703
+  280 samples, mean 637.9429, var 25988.4495
 +++++ vnf.flow_mgr.est_pruned +++++
 1 scalers:
-  280 samples, mean 0.2202, var 0.2324
+  280 samples, mean 0.2440, var 0.2630
 +++++ vnf.flow_mgr.flows_checked +++++
 1 scalers:
-  280 samples, mean -2.7354, var 5043.5948
+  280 samples, mean -2.6890, var 4724.4520
 +++++ vnf.flow_mgr.flows_notimeout +++++
 1 scalers:
-  280 samples, mean -1.9744, var 4723.0966
+  280 samples, mean -2.2242, var 4401.2741
 +++++ vnf.flow_mgr.flows_removed +++++
 1 scalers:
-  280 samples, mean -0.1116, var 2.5541
+  280 samples, mean -0.1426, var 2.3380
 +++++ vnf.flow_mgr.flows_timeout +++++
 1 scalers:
-  280 samples, mean -0.1495, var 5.1056
+  280 samples, mean -0.0827, var 5.0562
 +++++ vnf.flow_mgr.flows_timeout_inuse +++++
 1 scalers:
-  280 samples, mean 0.0345, var 2.0626
+  280 samples, mean 0.1123, var 2.1905
 +++++ vnf.flow_mgr.new_pruned +++++
 1 scalers:
-  280 samples, mean 0.7915, var 1.3945
+  280 samples, mean 0.7779, var 1.3629
 +++++ vnf.flow_mgr.rows_busy +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1457,25 +1457,25 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.rows_empty +++++
 1 scalers:
-  280 samples, mean 0.1049, var 0.5240
+  280 samples, mean 0.0983, var 0.5394
 +++++ vnf.flow_mgr.rows_maxlen +++++
 1 scalers:
-  280 samples, mean -0.0114, var 0.0079
+  280 samples, mean -0.0103, var 0.0080
 +++++ vnf.flow_mgr.rows_skipped +++++
 1 scalers:
-  280 samples, mean -0.3089, var 73.7481
+  280 samples, mean -0.5458, var 74.7784
 +++++ vnf.http.memcap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.http.memuse +++++
 1 scalers:
-  280 samples, mean -11631.8525, var 3438837489.3126
+  280 samples, mean -9734.4560, var 3619080522.9351
 +++++ vnf.ips.accepted +++++
 1 scalers:
-  280 samples, mean 18680.4709, var 23988862.6214
+  280 samples, mean 18576.3556, var 23277241.9688
 +++++ vnf.ips.blocked +++++
 1 scalers:
-  280 samples, mean 12.0939, var 218.9665
+  280 samples, mean 12.2284, var 221.1630
 +++++ vnf.ips.rejected +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1484,34 +1484,34 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.invalid_checksum +++++
 1 scalers:
-  280 samples, mean 0.0002, var 0.0000
+  280 samples, mean 0.0006, var 0.0001
 +++++ vnf.tcp.memuse +++++
 1 scalers:
-  280 samples, mean -1272.5365, var 2011316811.7984
+  280 samples, mean -943.3397, var 1980871921.2089
 +++++ vnf.tcp.no_flow +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.pseudo +++++
 1 scalers:
-  280 samples, mean 637.8873, var 28433.5851
+  280 samples, mean 634.4967, var 27536.2453
 +++++ vnf.tcp.pseudo_failed +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.reassembly_gap +++++
 1 scalers:
-  280 samples, mean 0.0190, var 0.0023
+  280 samples, mean 0.0222, var 0.0029
 +++++ vnf.tcp.reassembly_memuse +++++
 1 scalers:
-  280 samples, mean -7259.3258, var 371059369721.6683
+  280 samples, mean -6226.3409, var 363368171085.5624
 +++++ vnf.tcp.rst +++++
 1 scalers:
-  280 samples, mean 57.1643, var 5683.9880
+  280 samples, mean 58.0066, var 5977.2766
 +++++ vnf.tcp.segment_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.sessions +++++
 1 scalers:
-  280 samples, mean 642.9349, var 31510.4867
+  280 samples, mean 640.4063, var 30896.8762
 +++++ vnf.tcp.ssn_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1520,10 +1520,10 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.syn +++++
 1 scalers:
-  280 samples, mean 657.0341, var 34961.6863
+  280 samples, mean 654.2206, var 34371.4831
 +++++ vnf.tcp.synack +++++
 1 scalers:
-  280 samples, mean 645.7598, var 31592.7057
+  280 samples, mean 643.0893, var 30904.1527
 +++++ vnf.time_stamp_sec +++++
 1 scalers:
   280 samples, mean 1.0000, var 0.0000
@@ -1538,10 +1538,10 @@
 ```bash
 +++++ infras.cpu +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.cpu_0 +++++
 1 scalers:
-  280 samples, mean 74.9554, var 320.1949
+  280 samples, mean 74.7420, var 316.5515
 +++++ infras.eth0_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1556,16 +1556,16 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.eth1_rcv_byte +++++
 1 scalers:
-  280 samples, mean 8258627.5196, var 7803606283616.1816
+  280 samples, mean 8244966.8107, var 7862877964068.5957
 +++++ infras.eth1_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6000, var 23756572.3971
+  280 samples, mean 13358.2232, var 23742148.5314
 +++++ infras.eth1_snd_byte +++++
 1 scalers:
-  280 samples, mean 8063016.3589, var 5205567732872.9199
+  280 samples, mean 8035621.9571, var 5105869121064.4141
 +++++ infras.eth1_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0000, var 21055411.7500
+  280 samples, mean 16023.4893, var 20638603.8838
 +++++ infras.eth2_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1580,7 +1580,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.freeMem +++++
 1 scalers:
-  280 samples, mean 1009.0804, var 14084.3141
+  280 samples, mean 1008.2964, var 14426.9175
 +++++ infras.lo_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1595,19 +1595,19 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.suricata_proc +++++
 1 scalers:
-  280 samples, mean 35.3420, var 91.8556
+  280 samples, mean 35.2455, var 91.0158
 +++++ infras.upper_rcv_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_rcv_pkt +++++
 1 scalers:
-  280 samples, mean 13401.6268, var 23756587.0366
+  280 samples, mean 13358.2714, var 23742516.8513
 +++++ infras.upper_snd_byte +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ infras.upper_snd_pkt +++++
 1 scalers:
-  280 samples, mean 16080.0357, var 21055718.4344
+  280 samples, mean 16023.5554, var 20639290.5157
 +++++ vnf.app_layer.flow.dcerpc_tcp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1631,7 +1631,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.flow.http +++++
 1 scalers:
-  280 samples, mean 642.2184, var 30296.1485
+  280 samples, mean 639.2203, var 29505.6205
 +++++ vnf.app_layer.flow.imap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1658,7 +1658,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.app_layer.tx.http +++++
 1 scalers:
-  280 samples, mean 642.3582, var 30750.6078
+  280 samples, mean 639.5348, var 30011.9139
 +++++ vnf.app_layer.tx.smtp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1670,7 +1670,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.bytes +++++
 1 scalers:
-  280 samples, mean 7863252.5337, var 4560019522076.5176
+  280 samples, mean 7826792.1232, var 4445337412205.1943
 +++++ vnf.decoder.dce.pkt_too_small +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1697,7 +1697,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.ipv4 +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ipv4_in_ipv6 +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1724,7 +1724,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.pkts +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.ppp +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1742,7 +1742,7 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.decoder.tcp +++++
 1 scalers:
-  280 samples, mean 16136.5688, var 19515443.9701
+  280 samples, mean 16058.0603, var 18998913.9652
 +++++ vnf.decoder.teredo +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1799,40 +1799,40 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow.memuse +++++
 1 scalers:
-  280 samples, mean -1413.9429, var 4230456069.8253
+  280 samples, mean -881.0000, var 4167522391.0000
 +++++ vnf.flow.spare +++++
 1 scalers:
-  280 samples, mean 0.1510, var 3.5637
+  280 samples, mean 0.1478, var 3.5681
 +++++ vnf.flow.tcp_reuse +++++
 1 scalers:
-  280 samples, mean 497.4102, var 27944.9966
+  280 samples, mean 494.3072, var 27963.0400
 +++++ vnf.flow_mgr.bypassed_pruned +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.closed_pruned +++++
 1 scalers:
-  280 samples, mean 642.1860, var 26148.3703
+  280 samples, mean 637.9429, var 25988.4495
 +++++ vnf.flow_mgr.est_pruned +++++
 1 scalers:
-  280 samples, mean 0.2202, var 0.2324
+  280 samples, mean 0.2440, var 0.2630
 +++++ vnf.flow_mgr.flows_checked +++++
 1 scalers:
-  280 samples, mean -2.7354, var 5043.5948
+  280 samples, mean -2.6890, var 4724.4520
 +++++ vnf.flow_mgr.flows_notimeout +++++
 1 scalers:
-  280 samples, mean -1.9744, var 4723.0966
+  280 samples, mean -2.2242, var 4401.2741
 +++++ vnf.flow_mgr.flows_removed +++++
 1 scalers:
-  280 samples, mean -0.1116, var 2.5541
+  280 samples, mean -0.1426, var 2.3380
 +++++ vnf.flow_mgr.flows_timeout +++++
 1 scalers:
-  280 samples, mean -0.1495, var 5.1056
+  280 samples, mean -0.0827, var 5.0562
 +++++ vnf.flow_mgr.flows_timeout_inuse +++++
 1 scalers:
-  280 samples, mean 0.0345, var 2.0626
+  280 samples, mean 0.1123, var 2.1905
 +++++ vnf.flow_mgr.new_pruned +++++
 1 scalers:
-  280 samples, mean 0.7915, var 1.3945
+  280 samples, mean 0.7779, var 1.3629
 +++++ vnf.flow_mgr.rows_busy +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1841,25 +1841,25 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.flow_mgr.rows_empty +++++
 1 scalers:
-  280 samples, mean 0.1049, var 0.5240
+  280 samples, mean 0.0983, var 0.5394
 +++++ vnf.flow_mgr.rows_maxlen +++++
 1 scalers:
-  280 samples, mean -0.0114, var 0.0079
+  280 samples, mean -0.0103, var 0.0080
 +++++ vnf.flow_mgr.rows_skipped +++++
 1 scalers:
-  280 samples, mean -0.3089, var 73.7481
+  280 samples, mean -0.5458, var 74.7784
 +++++ vnf.http.memcap +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.http.memuse +++++
 1 scalers:
-  280 samples, mean -11631.8525, var 3438837489.3126
+  280 samples, mean -9734.4560, var 3619080522.9351
 +++++ vnf.ips.accepted +++++
 1 scalers:
-  280 samples, mean 18680.4709, var 23988862.6214
+  280 samples, mean 18576.3556, var 23277241.9688
 +++++ vnf.ips.blocked +++++
 1 scalers:
-  280 samples, mean 12.0939, var 218.9665
+  280 samples, mean 12.2284, var 221.1630
 +++++ vnf.ips.rejected +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1868,34 +1868,34 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.invalid_checksum +++++
 1 scalers:
-  280 samples, mean 0.0002, var 0.0000
+  280 samples, mean 0.0006, var 0.0001
 +++++ vnf.tcp.memuse +++++
 1 scalers:
-  280 samples, mean -1272.5365, var 2011316811.7984
+  280 samples, mean -943.3397, var 1980871921.2089
 +++++ vnf.tcp.no_flow +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.pseudo +++++
 1 scalers:
-  280 samples, mean 637.8873, var 28433.5851
+  280 samples, mean 634.4967, var 27536.2453
 +++++ vnf.tcp.pseudo_failed +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.reassembly_gap +++++
 1 scalers:
-  280 samples, mean 0.0190, var 0.0023
+  280 samples, mean 0.0222, var 0.0029
 +++++ vnf.tcp.reassembly_memuse +++++
 1 scalers:
-  280 samples, mean -7259.3258, var 371059369721.6683
+  280 samples, mean -6226.3409, var 363368171085.5624
 +++++ vnf.tcp.rst +++++
 1 scalers:
-  280 samples, mean 57.1643, var 5683.9880
+  280 samples, mean 58.0066, var 5977.2766
 +++++ vnf.tcp.segment_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.sessions +++++
 1 scalers:
-  280 samples, mean 642.9349, var 31510.4867
+  280 samples, mean 640.4063, var 30896.8762
 +++++ vnf.tcp.ssn_memcap_drop +++++
 1 scalers:
   280 samples, mean 0.0000, var 0.0000
@@ -1904,10 +1904,10 @@
   280 samples, mean 0.0000, var 0.0000
 +++++ vnf.tcp.syn +++++
 1 scalers:
-  280 samples, mean 657.0341, var 34961.6863
+  280 samples, mean 654.2206, var 34371.4831
 +++++ vnf.tcp.synack +++++
 1 scalers:
-  280 samples, mean 645.7598, var 31592.7057
+  280 samples, mean 643.0893, var 30904.1527
 +++++ vnf.time_stamp_sec +++++
 1 scalers:
   280 samples, mean 1.0000, var 0.0000
