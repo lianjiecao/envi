@@ -1,6 +1,5 @@
 import sys, subprocess
 import numpy as np
-import pandas as pd
 
 
 stats_f = {
