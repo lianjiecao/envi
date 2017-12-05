@@ -6,11 +6,12 @@ matplotlib.use('Agg')
 import pylab as plt
 
 
+port_proto = {'6':'tcp', '17':'udp'}
 proto_port = {'tcp':'6', 'udp':'17'}
 marker_labels = ['x', '+', '.', ',', '^']
 color_labels = ['g', 'b', 'r', 'y' ,'c', 'm']
 
-def analyzeNetflowTrace(pcap_fs, n_pkts, pt='tcp', mode=1):
+def analyzeNetflowTrace(pcap_fs, n_pkts, pts, mode=1):
     '''
     Analyze Netflow trace and decode the first n_pkts netflow raw packets from pcap_fs
     '''
@@ -20,8 +21,8 @@ def analyzeNetflowTrace(pcap_fs, n_pkts, pt='tcp', mode=1):
     pcap_info = {x:[] for x in pcap_fs}
     stats_fs = []
     for pf in pcap_fs:
-        net_pkt_avg = {}
-        net_vol_avg = {}
+        net_pkt_avg = {x:{} for x in pts}
+        net_vol_avg = {x:{} for x in pts}
         cmd = 'capinfos -caeuSMNTm %s' % pf
         ret = subprocess.check_output(cmd, shell=True)
         ### File name,Number of packets,Capture duration (seconds),Start time,End time
@@ -40,15 +41,15 @@ def analyzeNetflowTrace(pcap_fs, n_pkts, pt='tcp', mode=1):
                 subprocess.call(cmd, shell=True)
                 pkt_cnt = 0
                 tmp_pcap_files = sorted(os.listdir(tmp_dir))
-                sys.stderr.write('Splitted pcap file into %d pieces ...' % len(tmp_pcap_files))
+                sys.stderr.write('+++ Splitted pcap file into %d pieces for %s packets ...\n' % (len(tmp_pcap_files), ' '.join(pts)))
                 ### Read packets from each splitted pcap ###
                 for tmp_pf in tmp_pcap_files:
-                    sys.stderr.write('Processing %s ...' % tmp_pf)
+                    sys.stderr.write('--- Processing %s ...\n' % tmp_pf)
                     cmd = 'tshark -r %s/%s -d udp.port==9500,cflow -Tjson -c %d' % (tmp_dir, tmp_pf, min(f_n_pkts-pkt_cnt, N_pkts))
                     ret = subprocess.check_output(cmd, shell=True)
                     pkts = json.loads(ret)
                     pkt_cnt += len(pkts)
-                    decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, N_pkts)
+                    decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, N_pkts, pts)
                     if pkt_cnt >= f_n_pkts:
                         break
             if mode == 2:
@@ -57,11 +58,12 @@ def analyzeNetflowTrace(pcap_fs, n_pkts, pt='tcp', mode=1):
                     cmd = 'tshark -r %s -d udp.port==9500,cflow -Tjson -Y frame.number==%d -c %d' % (pf, pkt_idx, pkt_idx)
                     ret = subprocess.check_output(cmd, shell=True)
                     pkts = json.loads(ret)
-                    decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, 1)
+                    decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, 1, pts)
         n_pkts -= f_n_pkts
-        out_f = '%s.stats' % pf
-        dumpStats(out_f, net_pkt_avg, net_vol_avg)
-        stats_fs.append(out_f)
+        for pt in pts:
+            out_f = '%s_%s.stats' % (pf, pt)
+            dumpStats(out_f, net_pkt_avg[pt], net_vol_avg[pt])
+            stats_fs.append(out_f)
 
     return stats_fs
 
@@ -72,10 +74,11 @@ def dumpStats(out_f, net_pkt_avg, net_vol_avg):
         for sec in sorted(net_pkt_avg.keys()):
             of.write('%d,%d,%d\n' % (sec, net_pkt_avg[sec], net_vol_avg[sec]))
 
+    sys.stderr.write('+++ Dumped stats to %s\n' % out_f)
     return
 
 
-def decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, max_n_pkts, pt='tcp'):
+def decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, max_n_pkts, pts):
     '''
     Decode Netflow packets
     '''
@@ -90,15 +93,16 @@ def decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, max_n_pkts, pt='tcp'):
         for rec_idx in range(1, int(n_flows)+1):
             pdu = pkts[pkt_idx]['_source']['layers']['cflow']['pdu %d/%d' % (rec_idx, n_flows)]
             ### TCP flows ###
-            if pdu['cflow.protocol'] == proto_port[pt]:
+            if pdu['cflow.protocol'] in [proto_port[x] for x in pts]:
+                pt = port_proto[pdu['cflow.protocol']]
                 flow_len = 1 if int(float(pdu['cflow.timedelta'])) == 0 else int(float(pdu['cflow.timedelta']))
                 flow_pkt = int(pdu['cflow.packets'])
                 flow_vol = int(pdu['cflow.octets']) - flow_pkt * 40
                 ### Update pkt and vol info for each sec of the flow duration ###
                 for sec in range(int(float(pdu['cflow.timedelta_tree']['cflow.timestart'])), \
                         int(float(pdu['cflow.timedelta_tree']['cflow.timestart'])) + 1 ):
-                    net_pkt_avg[sec] = net_pkt_avg.get(sec, 0) + flow_pkt / flow_len
-                    net_vol_avg[sec] = net_vol_avg.get(sec, 0) + flow_vol / flow_len
+                    net_pkt_avg[pt][sec] = net_pkt_avg[pt].get(sec, 0) + flow_pkt / flow_len
+                    net_vol_avg[pt][sec] = net_vol_avg[pt].get(sec, 0) + flow_vol / flow_len
 
     return
 
@@ -159,7 +163,7 @@ def calcMean(stats_1sec, avg_int):
     stats_avg_plot = {'Time':[], 'Packet_Per_Second':[], 'Bytes_Per_Second':[], 'Mbps':[]}
     times = sorted(stats_1sec.keys())
     if avg_int > times[-1] - times[0]:
-        sys.stderr.write('Error: interval value is large then trace duration: [%d:%d]' % (times[0], times[-1]))
+        sys.stderr.write('Error: interval value is large then trace duration: [%d:%d]\n' % (times[0], times[-1]))
         sys.exit(1)
     for sec in range(times[0], times[-1], avg_int):
         stats_avg[sec] = [sum([stats_1sec[t][x] for t in range(sec, sec + min(avg_int, times[-1]-sec))]) / avg_int \
@@ -168,8 +172,8 @@ def calcMean(stats_1sec, avg_int):
     sys.stderr.write('+++++ Stats over %d seconds +++++\n' % avg_int)
     print 'time,pkt_%dsec,byte_%dsec,mbps_%dsec' % (avg_int, avg_int, avg_int)
     for sec in sorted(stats_avg.keys()):
-        mbps_val = stats_avg[sec][-1] * 8 / 1000000
-        print '%d,%s,%d' % (sec, ','.join(map(str, stats_avg[sec])), mbps_val)
+        mbps_val = float(stats_avg[sec][-1]) * 8 / 1000000
+        print '%d,%s,%.4f' % (sec, ','.join(map(str, stats_avg[sec])), mbps_val)
         stats_avg_plot['Time'].append(sec)
         stats_avg_plot['Packet_Per_Second'].append(stats_avg[sec][0])
         stats_avg_plot['Bytes_Per_Second'].append(stats_avg[sec][1])
@@ -220,6 +224,14 @@ def main():
         help='Stats files, separated by \',\'',
     )
 
+    parser.add_argument('-t', '--protos',
+        action='store',
+        dest='protos',
+        type=str,
+        default='tcp',
+        help='Protocols to extract, separated by \',\': udp, tcp',
+    )
+
     parser.add_argument('-i', '--avg-interval',
         action='store',
         dest='avg_int',
@@ -244,7 +256,6 @@ def main():
         help='Processing mode of Netflow trace file: 1, read all packets; 2, read one packet a time'
     )
 
-
     parser.add_argument('-f', '--out-figure',
         dest='out_fig',
         action='store',
@@ -259,7 +270,7 @@ def main():
         args.avg_int = '60'
 
     if args.pcap_fs is not None:
-        stats_fs = analyzeNetflowTrace(args.pcap_fs.split(','), args.n_pkts, mode=args.proc_mode)
+        stats_fs = analyzeNetflowTrace(args.pcap_fs.split(','), args.n_pkts, args.protos.split(','), mode=args.proc_mode)
 
     if args.avg_int is not None:
         if args.pcap_fs is None and args.stats_fs is None:
