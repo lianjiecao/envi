@@ -154,6 +154,16 @@ def readStatsFiles(stats_fs):
     return stats_info
 
 
+def getFilesFromDir(dir_name, key=''):
+    '''
+    Get all files with key in dir_name
+    '''
+
+    files_all = os.listdir(dir_name)
+
+    return [os.path.join(dir_name, x) for x in files_all if key in x]
+
+
 def calcMean(stats_1sec, avg_int):
     '''
     Calculate mean values over intv seconds
@@ -217,11 +227,27 @@ def main():
         help='pcap files of Netflow packets, separated by \',\''
     )
 
+    parser.add_argument('--pcap-dirs',
+        dest='pcap_dirs',
+        action='store',
+        type=str,
+#        required=True,
+        help='Directories including pcap files of Netflow packets, separated by \',\''
+    )
+
     parser.add_argument('-s', '--stats-files',
         action='store',
         dest='stats_fs',
         type=str,
         help='Stats files, separated by \',\'',
+    )
+
+    parser.add_argument('--stats-dirs',
+        dest='stats_dirs',
+        action='store',
+        type=str,
+#        required=True,
+        help='Directories including stats files of Netflow packets, separated by \',\''
     )
 
     parser.add_argument('-t', '--protos',
@@ -265,19 +291,34 @@ def main():
 
     args = parser.parse_args()
     stats_fs = []
+    pcap_fs = []
+    protos = args.protos.split(',')
 
-    if args.stats_fs is not None and args.avg_int is None:
-        args.avg_int = '60'
+    if args.stats_fs is not None:
+        stats_fs.extend(args.stats_fs.split(','))
+ 
+    if args.stats_dirs is not None:
+        for s_dir in args.stats_dirs.split(','):
+            stats_fs.extend(getFilesFromDir(s_dir, key='%s.stats' % protos[0]))
 
     if args.pcap_fs is not None:
-        stats_fs = analyzeNetflowTrace(args.pcap_fs.split(','), args.n_pkts, args.protos.split(','), mode=args.proc_mode)
+        pcap_fs.extend(args.pcap_fs.split(','))
+ 
+    if args.pcap_dirs is not None:
+        for p_dir in args.pcap_dirs.split(','):
+            pcap_fs.extend(getFilesFromDir(p_dir, key='netflow'))
 
+    if len(stats_fs) > 0 and args.avg_int is None:
+        args.avg_int = '100'
+
+#    if len(pcap_fs) > 0:
+#        stats_fs.extend(analyzeNetflowTrace(pcap_fs, args.n_pkts, args.protos.split(','), mode=args.proc_mode))
+
+    print pcap_fs, stats_fs
     if args.avg_int is not None:
-        if args.pcap_fs is None and args.stats_fs is None:
+        if len(stats_fs) <= 0:
             print 'Error: Please specify -p or -s!'
             sys.exit(1)
-        elif args.stats_fs is not None:
-            stats_fs = args.stats_fs.split(',')
         stats_1sec = readStatsFiles(stats_fs)
         stats_avg = {}
         for avg_int in [int(x) for x in args.avg_int.split(',')]:
