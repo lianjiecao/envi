@@ -1,4 +1,6 @@
-import subprocess, argparse, binascii, sys, os
+#! /usr/bin/python
+
+import subprocess, argparse, binascii, sys, os, uuid
 
 def pcap2Nfdata(pcap_fs):
     '''
@@ -33,7 +35,7 @@ def pcap2Nfdata(pcap_fs):
     return nfdata_fs
 
 
-def mergPcapFiles(pcap_fs):
+def mergePcapFiles(pcap_fs):
     '''
     Merge multiple pcap file before running pcap2Nfdata()
     '''
@@ -42,6 +44,8 @@ def mergPcapFiles(pcap_fs):
         return pcap_fs[0]
     ### Merge pcap files ###
     pcap_out = os.path.join('/tmp', '-'.join([x.split('/')[-1] for x in pcap_fs]))
+    if len(pcap_out) > 256:
+        pcap_out = os.path.join('/tmp', str(uuid.uuid4()))
     print 'Merging pcap files to [%s]: %s' % (pcap_out, ','.join(pcap_fs))
     cmd = 'mergecap -a -w %s %s' % (pcap_out, ' '.join(pcap_fs))
     ret = subprocess.check_output(cmd, shell=True, executable='/bin/bash')
@@ -134,7 +138,7 @@ def main():
 
     if args.pcap_fs != None:
         if args.merge_pcap_fs:
-            pcap_fs = [mergPcapFiles(args.pcap_fs.split(','))]
+            pcap_fs = [mergePcapFiles(args.pcap_fs.split(','))]
         else:
             pcap_fs = args.pcap_fs.split(',')
         nfdata_fs.extend(pcap2Nfdata(pcap_fs))
