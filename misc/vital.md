@@ -29,6 +29,7 @@ optional arguments:
 ```
 
 ```--config``` is the experiment configuration file contains information of VNF, orchestrator, monitor and, most importantly, workload.
+
 **Example commands**
 - Run multiple types of homogeneous traffic for Suricata and collect data sets for offline training
     ```sh
@@ -117,7 +118,9 @@ VITAL collects VNF-level and infras-level data and dumps them to a output direct
 VITAL collects one data point for each monitoring interval T (T = 10 seconds by default) and makes actions (e.g., scaling decisions, resource allocation, etc) for every time window W (W = nT, n = 10 by default). Therefore, ```xxx-app-metric.log``` and ```xxx-infras-metric.log``` files follow the format:
 
 Line 1: feature names separated by ";"
+
 Line 2: feature values collected during W1 (values for each T are separated by ",") for all features (value of features separated by ";")
+
 Line 3: same set of values collected during W2
 
 Example selected from an infras log file:
@@ -145,6 +148,7 @@ VITAL includes three types of codes: Python code for overall controlling, yaml f
 VITAL is capable of generating homogeneous and hybrid workload traffic in terms of composition and rate. Depending on the VNF, hybrid workload traffic can be a combination of different protocols or different parameters of the same protocol. For instance, user can combine UDP, TCP and HTTP traffic for IDS experiments. User may also specify different parameters for each protocol (malicious ratio for UDP and response size for HTTP). But only one parameter can be used for each ```update_interval```. For instance, user can generate HTTP traffic with 20 KB response size and UDP traffic with 10% malicious traffic at the same time, but it is impossible to have UDP traffic with 10% and 30% malcious traffic together. User may change malicious traffic ratio in the next interval.
 
 - **Homogeneous workload** (```--exp-mode homo```) is usually used for collecting offline training data. User may specify multiple protocols and parameters for each protocol, but they will be used sequentially (one <protocol, parameter> a time). It starts with a "slow_start" phase (if ``` vnf_caps``` is not set in experiment configuration) to detect the VNF system capacity of the current workload type, then it enters "random" phase in which rate is computed based on a random ratio (generated based on ```rate_ratio_range```) of the detected VNF capacity value.
+
 - **Hybrid workload** (```--exp-mode homo```) is used for ENVI online testing which requires either multiple protocols (e.g., combine UDP, TCP and HTTP traffic for Suricata) or different protocol parameters (e.g., change response size of HTTP traffic for Squid). In hybrid mode, if ``` vnf_caps``` is not set, it will automatically excute the "slow_start" mode for each <protocol, parameter> workload type to figure out the VNF capacity. The only differences are for each interval VITAL randomly pick a parameter for each protocol and the random ratio will be further splitted for each specified protocol.
 
 - **Workload rate** in the two experiment modes is either incremental ("slow start" phase) or randomly generated around VNF capacity. However, user can also specify predefined rates in a rate file ```rate_file``` which is referred as "custom rate" mode. ```/home/ubuntu/nfv-vital/netflow_trace/netflow0-183_3600_udp_flow.stats``` is an example rate file extracted from a [Netflow trace](https://www.simpleweb.org/wiki/index.php/Traces#NetFlow_Traces). Custom rate does not conflict homogeneous and hybrid workload modes. It simply replace the random rate computation method. But in order use "custom rate" mode with a rate file, user needs to specify workload parameters ```types``` and ```vnf_caps```. VITAL modulate the given custom rates (using multipliers and offsets) to make sure VNF will be operated around the capacity point. The motivation behind this is to artifically introduce VNF overload and make scaling decisions necessary (for testing ENVI). User may change the workload modulation parameters in ```getCustomRate()```. If VNF capacities are not specified, the original values in the rate file will be used.
