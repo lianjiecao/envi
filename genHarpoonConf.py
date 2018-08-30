@@ -1,22 +1,28 @@
-import subprocess, argparse, binascii, sys, os
+#! /usr/bin/python
+
+import subprocess, argparse, binascii, sys, os, uuid
 
 def pcap2Nfdata(pcap_fs):
     '''
-    Extract and convert pcap files with raw Netflow UDP packets to binary Netflow data
+    Extract and convert pcap files with raw Netflow UDP packets to binary Netflow record data
+    If multiple pcap files are given, merge them first.
     '''
 
     print '\n+ Extracting Netflow payload from raw packets ...'
     pcap_fs = pcap_fs if type(pcap_fs) == list else [pcap_fs]
     nfdata_fs = []
+
     for pf in pcap_fs:
         hf = '%s_data_hex' % pf
         df = '%s_data_binary' % pf
         # print '  - %s => %s' % (pf, hf)
         sys.stdout.write('  - %s => %s' % (pf, hf))
+        ### Extract Netflow records to hex file ###
         if not os.path.isfile(hf):
             cmd = 'tshark -r %s -T fields -e data | tr -d \'\n\' > %s' % (pf, hf)
             ret = subprocess.check_output(cmd, shell=True, executable='/bin/bash')
         sys.stdout.write(' => %s' % df)
+        ### Convert hex file to binary file ###
         if not os.path.isfile(df):
             with open(hf, 'r') as hf_f:
                 hex_str = hf_f.read()
@@ -29,7 +35,25 @@ def pcap2Nfdata(pcap_fs):
     return nfdata_fs
 
 
-def nfdata2HarpoonConfig(int_len, int_inc, ipsrc, ipdst, nfdata_fs):
+def mergePcapFiles(pcap_fs):
+    '''
+    Merge multiple pcap file before running pcap2Nfdata()
+    '''
+
+    if len(pcap_fs) <= 1:
+        return pcap_fs[0]
+    ### Merge pcap files ###
+    pcap_out = os.path.join('/tmp', '-'.join([x.split('/')[-1] for x in pcap_fs]))
+    if len(pcap_out) > 256:
+        pcap_out = os.path.join('/tmp', str(uuid.uuid4()))
+    print 'Merging pcap files to [%s]: %s' % (pcap_out, ','.join(pcap_fs))
+    cmd = 'mergecap -a -w %s %s' % (pcap_out, ' '.join(pcap_fs))
+    ret = subprocess.check_output(cmd, shell=True, executable='/bin/bash')
+
+    return pcap_out
+
+
+def nfdata2HarpoonConfig(int_len, ipsrc, ipdst, nfdata_fs, int_inc=0):
     '''
     Convert Netflow data to Harpoon intermediate file and then to configuration files 
     '''
@@ -38,8 +62,11 @@ def nfdata2HarpoonConfig(int_len, int_inc, ipsrc, ipdst, nfdata_fs):
     if int_len > 600:
         print 'Error: Please specify a IntervalDuration for Harpoon < 600 sec!'
         sys.exit(1)
+
+    int_lens = range(int_len, 601, int_inc) if int_inc > 0 else [int_len]    
+
     for df in nfdata_fs:
-        for l in range(int_len, 601, int_inc):
+        for l in int_lens:
             ### Generate Harpoon intermediate file ###
             tmp_f = '%s_%d' % (df, l)
             print '  - %s => %s' % (df, tmp_f)
@@ -65,6 +92,12 @@ def main():
         dest='pcap_fs',
         type=str,
         help='Pcap files with raw Netflow packets (Ethernet Frames), separated by \',\'',
+    )
+
+    parser.add_argument('-m', '--merge-pcap',
+        action='store_true',
+        dest='merge_pcap_fs',
+        help='Merge multiple pcap files before processing',
     )
 
     parser.add_argument('-f', '--netflow-data',
@@ -94,7 +127,7 @@ def main():
         action='store',
         dest='endpts',
         type=str,
-        default='128.10.130.152/32:128.10.130.152/32',
+        default='0.0.0.0/32:0.0.0.0/32',
         help='Endpoints of network traffic [ip_src:ip_dst]',
     )
 
@@ -104,12 +137,16 @@ def main():
     nfdata_fs = []
 
     if args.pcap_fs != None:
-        nfdata_fs.extend(pcap2Nfdata(args.pcap_fs.split(',')))
+        if args.merge_pcap_fs:
+            pcap_fs = [mergePcapFiles(args.pcap_fs.split(','))]
+        else:
+            pcap_fs = args.pcap_fs.split(',')
+        nfdata_fs.extend(pcap2Nfdata(pcap_fs))
 
     if args.nfdata_fs != None:
         nfdata_fs.extend(args.nfdata_fs.split(','))
 
-    nfdata2HarpoonConfig(args.int_len, args.int_inc, args.endpts.split(':')[0], args.endpts.split(':')[1], nfdata_fs)
+    nfdata2HarpoonConfig(args.int_len, args.endpts.split(':')[0], args.endpts.split(':')[1], nfdata_fs, int_inc=args.int_inc)
 
 
 if __name__ == '__main__':
