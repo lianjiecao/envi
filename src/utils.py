@@ -1,4 +1,4 @@
-import sys, subprocess
+import re, sys, subprocess
 import numpy as np
 
 
@@ -12,14 +12,34 @@ stats_f = {
     # 'last':lambda x: x[-1] if type(x) is list else x,
 }
 
-proto2key_f = {'udp':'vnf.decoder.udp', 'http':'vnf.app_layer.flow.http'}
+proto2kpi = {'suricata_udp':'vnf.decoder.pkts', 'suricata_http':'vnf.app_layer.flow.http', \
+        'squid':'vnf.Number_of_HTTP_requests_received'} # 'suricata_udp':'vnf.decoder.udp'
+
+# def str2float(v):
+#     if type(v) == list:
+#         try:
+# #            return [float(x) for x in v]
+#             return [float(x) if re.match('^\d+?\.*\d+?$', x) is not None else x for x in v]
+#         except:
+#             return v
+#     else:
+#         try:
+#             return float(v)
+#         except:
+#             return v
+
 
 def str2float(v):
+    '''
+    Convert strings to float
+    v: single string or nested list with multiple strings
+    '''
+    
     if type(v) == list:
-        try:
-            return [float(x) for x in v]
-        except:
-            return v
+        nv = []
+        for item in v:
+            nv.append(str2float(item))
+        return nv
     else:
         try:
             return float(v)
@@ -76,10 +96,12 @@ def getDataFileType(f_path):
     '''
 
     w_protos = []
-    if 'UDP' in f_path or 'udp' in f_path:
-        w_protos.append('udp')
-    if 'HTTP' in f_path or 'http' in f_path:
-        w_protos.append('http')
+    if 'UDP' in f_path and 'suricata' in f_path:
+        w_protos.append('suricata_udp')
+    if 'HTTP' in f_path and 'suricata' in f_path:
+        w_protos.append('suricata_http')
+    if 'squid' in f_path:
+        w_protos.append('squid')
 
     return w_protos
 
@@ -102,9 +124,9 @@ def mergeDataFiles(data_fs):
         tmp_f = data_fs[0]
     else:
         ### Merge all training data files if multiple training files are given ###
-        tmp_f = '%s.csv' % genFileName(train_fs)
-        subprocess.check_output('cat %s > %s' % (train_fs[0], tmp_f), shell=True)
-        for f in train_fs[1:]:
+        tmp_f = '%s.csv' % genFileName(data_fs)
+        subprocess.check_output('cat %s > %s' % (data_fs[0], tmp_f), shell=True)
+        for f in data_fs[1:]:
             subprocess.check_output('tail -n +2 %s >> %s' % (f, tmp_f), shell=True)
 
     return tmp_f
@@ -117,7 +139,7 @@ def genFileName(file_names):
 
     if type(file_names) is not list:
         return file_names
-    prefix = file_names[0][:file_names[0].find('/')]
+    prefix = file_names[0][:file_names[0].rfind('/')]
     tokens = [x.split('/')[-1].split('-')[2] for x in file_names]
     new_file_name = '%s/%s-%s' % (prefix, file_names[0].split('/')[-1].split('-')[0], '-'.join(tokens))
 
