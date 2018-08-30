@@ -118,10 +118,9 @@ VITAL collects VNF-level and infras-level data and dumps them to a output direct
 VITAL collects one data point for each monitoring interval T (T = 10 seconds by default) and makes actions (e.g., scaling decisions, resource allocation, etc) for every time window W (W = nT, n = 10 by default). Therefore, ```xxx-app-metric.log``` and ```xxx-infras-metric.log``` files follow the format:
 
 Line 1: feature names separated by ";"
-
 Line 2: feature values collected during W1 (values for each T are separated by ",") for all features (value of features separated by ";")
+Line n: same set of values collected during Wn
 
-Line 3: same set of values collected during W2
 
 Example selected from an infras log file:
 ```sh
