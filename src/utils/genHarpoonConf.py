@@ -1,5 +1,12 @@
 #! /usr/bin/python
 
+#################################################
+# This work was done as part of Lianjie Cao's   #
+# internship at Hewlett Packard Labs while he   #
+# was a student at Purdue University.           #
+#################################################
+
+
 import subprocess, argparse, binascii, sys, os, uuid
 
 def pcap2Nfdata(pcap_fs):

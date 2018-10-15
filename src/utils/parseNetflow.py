@@ -1,5 +1,12 @@
 #! /usr/bin/python
 
+#################################################
+# This work was done as part of Lianjie Cao's   #
+# internship at Hewlett Packard Labs while he   #
+# was a student at Purdue University.           #
+#################################################
+
+
 import argparse, subprocess, datetime, json, os, shutil, csv, sys, itertools, uuid
 import matplotlib
 matplotlib.use('Agg')
