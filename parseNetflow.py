@@ -75,6 +75,10 @@ def analyzeNetflowTrace(pcap_fs, n_pkts, pts, mode=1):
 
 
 def dumpStats(out_f, net_pkt_avg, net_vol_avg, net_flow_avg):
+    '''
+    Dump per second stats (pkt/sec and bytes/sec) to a file out_f
+    '''
+
     with open(out_f, 'w') as of:
         of.write('time,pkts,bytes,flow\n')
         for sec in sorted(net_pkt_avg.keys()):
@@ -100,9 +104,14 @@ def decodeNetflowPkts(pkts, net_pkt_avg, net_vol_avg, net_flow_avg, max_n_pkts, 
         ### Read each flow record ###
         for rec_idx in range(1, int(n_flows)+1):
             pdu = pkts[pkt_idx]['_source']['layers']['cflow']['pdu %d/%d' % (rec_idx, n_flows)]
+#<<<<<<< HEAD
+#            ### Choose flow protocols (tcp or udp) ###
+#            if pdu['cflow.protocol'] == proto_port[pt]:
+#=======
             ### TCP flows ###
             if pdu['cflow.protocol'] in [proto_port[x] for x in pts]:
                 pt = port_proto[pdu['cflow.protocol']]
+# >>>>>>> 613b2a6602c73df28ea82adcd3130d844f106215
                 flow_len = 1 if int(float(pdu['cflow.timedelta'])) == 0 else int(float(pdu['cflow.timedelta']))
                 flow_pkt = int(pdu['cflow.packets'])
                 flow_vol = int(pdu['cflow.octets']) - flow_pkt * 40
@@ -140,7 +149,7 @@ def conv2Number(strings):
 
 def readStatsFiles(stats_fs):
     '''
-    Reader stats info from files with format:
+    Read stats info from files with format:
     time,pkts,bytes
     '''
 
