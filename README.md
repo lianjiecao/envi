@@ -1,5 +1,5 @@
 # ENVI Dataset
-This repo includes offline training data and online testing data used in our [ANCS 2018 paper](https://dl.acm.org/citation.cfm?id=3230725).
+This repo includes offline training data and online testing data used in our [ANCS 2018 paper](https://dl.acm.org/citation.cfm?id=3230725). This work was done as part of Lianjie Cao's internship at Hewlett Packard Labs while he was a student at Purdue University.
 
 ## Offline Data
 ```envi/data/offline/``` includes training datasets for IDS [Suricata](https://suricata-ids.org/) and caching proxy [Squid](http://www.squid-cache.org/), each of which contains data collected using 5 different types of homogeneous workload traffic.
@@ -11,5 +11,3 @@ We leverage an [real-world NetFlow traffic trace](https://www.simpleweb.org/wiki
 
 We also include the python scripts to extract the UDP and TCP information from the original NetFlow trace in ```envi/src/utils/```. ```wireshark-common``` and ```tshark``` are required to run the scripts.
 
-
-This work was done as part of Lianjie Cao's internship at Hewlett Packard Labs while he was a student at Purdue University.
