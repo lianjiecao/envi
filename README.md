@@ -1,5 +1,5 @@
 # ENVI Dataset
-This repo includes offline training data and online testing data used in our [ANCS 2018 paper](https://dl.acm.org/citation.cfm?id=3230725). This work was done as part of Lianjie Cao's internship at Hewlett Packard Labs while he was a student at Purdue University.
+This repo includes offline training data and online testing data used in our [ANCS 2018 paper](https://dl.acm.org/citation.cfm?id=3230725). This work was done as part of Lianjie Cao's internship at [Hewlett Packard Labs](https://www.labs.hpe.com/) while he was a student at [Purdue University](https://www.cs.purdue.edu/).
 
 ## Offline Data
 ```envi/data/offline/``` includes training datasets for IDS [Suricata](https://suricata-ids.org/) and caching proxy [Squid](http://www.squid-cache.org/), each of which contains data collected using 5 different types of homogeneous workload traffic.
