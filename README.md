@@ -10,3 +10,6 @@ Each dataset is stored in a csv file with feature names in the first line and va
 We leverage an [real-world NetFlow traffic trace](https://www.simpleweb.org/wiki/index.php/Traces#NetFlow_Traces) to generate online testing workload. Since the original trace is huge and spans over 8 days, we extract and average the key informaion such as TCP/UDP packet rate, throughput in Bps/bps, and TCP/UDP flow rate over 3600 seconds. ```envi/data/online/``` contains this information for UDP (to test Suricata) and TCP (to test Squid) traffic. Note that users may need to modulate this infomation (e.g., proportionally increase) to make sure the generated workload do not alway overload or underload the tested VNF. In other words, the ideal testing workload should fluctuate around the system capacity point.
 
 We also include the python scripts to extract the UDP and TCP information from the original NetFlow trace in ```envi/src/utils/```. ```wireshark-common``` and ```tshark``` are required to run the scripts.
+
+
+This work was done as part of Lianjie Cao's internship at Hewlett Packard Labs while he was a student at Purdue University.
